@@ -4,6 +4,8 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
+export const runtime = 'edge'; 
+
 export const metadata: Metadata = {
   title: "Eitje Erbij?",
   description: "Website voor de belangrijke taak van het bijhouden van eitjes",

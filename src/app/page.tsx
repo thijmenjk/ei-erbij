@@ -1,6 +1,6 @@
 import { decreaseEggCount, eggCount, increaseEggCount } from "@/actions";
 import { getUserId } from "@/utils";
-
+import Image from "next/image";
 const locale = "nl-NL";
 
 export default async function Home() {
@@ -12,7 +12,7 @@ export default async function Home() {
   const peopleCount = countMap ? Object.keys(countMap).length : 0;
 
   return (<>
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-12">
       <div className="flex flex-col gap-4 items-center justify-center">
         <div className="flex gap-4">
           <div className="flex flex-col gap-5 items-center">
@@ -49,9 +49,12 @@ export default async function Home() {
                 (uid) => (
                   <div key={uid} className="flex justify-center gap-5 flex-wrap">
                     {Array.from({ length: countMap[uid] }, (_, i) => (
-                      <img
+                      <Image
                         key={i}
-                        className={`w-24 h-24${uid === cuid ? " animate-bounce" : ""}`}
+                        width={96}
+                        height={96}
+                        alt="Ei"
+                        className={`${uid === cuid ? "animate-bounce" : ""}`}
                         src="egg.svg"
                       />
                     ))}
