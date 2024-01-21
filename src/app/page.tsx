@@ -1,6 +1,7 @@
 import { decreaseEggCount, eggCount, increaseEggCount } from "@/actions";
 import { getUserId } from "@/utils";
 import Image from "next/image";
+import { SubmitButton } from "./_components/submit-button";
 const locale = "nl-NL";
 
 export default async function Home() {
@@ -19,44 +20,40 @@ export default async function Home() {
             <h1 className="text-6xl font-bold">{date.toLocaleString(locale, { weekday: 'long' })}</h1>
             <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
 
-            {count > 0 ? 
+            {count > 0 ?
               (<p>in totaal {count} eitje{count > 1 ? 's' : ''} voor {peopleCount} {peopleCount > 1 ? 'personen' : 'persoon'}</p>) :
               (<p>nog geen eitjes opgegeven</p>)
             }
 
             <div className="flex gap-2">
               <form action={decreaseEggCount}>
-                <button
-                  className="font-bold py-2 px-4 rounded"
-                >
+                <SubmitButton>
                   -
-                </button>
+                </SubmitButton>
               </form>
               <div className="w-[100px] text-center font-bold py-2 px-4 rounded">
                 {cuid && countMap ? countMap[cuid] || 0 : 0}
               </div>
               <form action={increaseEggCount}>
-                <button
-                  className="font-bold py-2 px-4 rounded"
-                >
+                <SubmitButton>
                   +
-                </button>
+                </SubmitButton>
               </form>
             </div>
 
             <div className="flex justify-center gap-5 flex-wrap max-w-xl">
               {countMap && Object.keys(countMap).sort().map(
                 (uid) => (
-                    Array.from({ length: countMap[uid] }, (_, i) => (
-                      <Image
-                        key={i}
-                        width={96}
-                        height={96}
-                        alt="Ei"
-                        className={`${uid === cuid ? "animate-bounce" : ""}`}
-                        src="egg.svg"
-                      />
-                    ))
+                  Array.from({ length: countMap[uid] }, (_, i) => (
+                    <Image
+                      key={i}
+                      width={96}
+                      height={96}
+                      alt="Ei"
+                      className={`${uid === cuid ? "animate-bounce" : ""}`}
+                      src="egg.svg"
+                    />
+                  ))
                 ))}
             </div>
           </div>
