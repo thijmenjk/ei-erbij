@@ -44,11 +44,10 @@ export default async function Home() {
               </form>
             </div>
 
-            <div className="flex flex-col gap-5">
+            <div className="flex justify-center gap-5 flex-wrap max-w-xl">
               {countMap && Object.keys(countMap).sort().map(
                 (uid) => (
-                  <div key={uid} className="flex justify-center gap-5 flex-wrap">
-                    {Array.from({ length: countMap[uid] }, (_, i) => (
+                    Array.from({ length: countMap[uid] }, (_, i) => (
                       <Image
                         key={i}
                         width={96}
@@ -57,8 +56,7 @@ export default async function Home() {
                         className={`${uid === cuid ? "animate-bounce" : ""}`}
                         src="egg.svg"
                       />
-                    ))}
-                  </div>
+                    ))
                 ))}
             </div>
           </div>
