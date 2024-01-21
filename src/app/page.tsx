@@ -12,7 +12,7 @@ export default async function Home() {
   const peopleCount = countMap ? Object.keys(countMap).length : 0;
 
   return (<>
-    <main className="flex min-h-screen flex-col items-center justify-between p-12">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <div className="flex flex-col gap-4 items-center justify-center">
         <div className="flex gap-4">
           <div className="flex flex-col gap-5 items-center">
