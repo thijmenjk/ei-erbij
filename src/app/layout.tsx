@@ -4,9 +4,9 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const runtime = 'edge'; 
-export const preferredRegion = ['fra1'];
-export const dynamic = 'force-dynamic'; 
+export const runtime = "edge";
+export const preferredRegion = ["fra1"];
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Eitje Erbij?",
@@ -22,6 +22,16 @@ export default async function RootLayout({
     <html lang="nl">
       <body className={inter.className}>
         {children}
+
+        <footer className="flex p-6 justify-center">
+          <a
+            href="https://github.com/thijmenjk/ei-erbij"
+            className="underline"
+            target="_blank"
+          >
+            source
+          </a>
+        </footer>
       </body>
     </html>
   );
