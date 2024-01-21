@@ -5,6 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const runtime = 'edge'; 
+export const preferredRegion = ['fra1'];
+export const dynamic = 'force-dynamic'; 
 
 export const metadata: Metadata = {
   title: "Eitje Erbij?",
