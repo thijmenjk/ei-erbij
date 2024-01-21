@@ -39,7 +39,7 @@ bun dev
 To build the project:
 
 ```sh
-bun build
+bun run build
 ```
 
 ## Project Structure
