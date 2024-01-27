@@ -9,7 +9,7 @@ export const preferredRegion = ["fra1"];
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Eitje Erbij?",
+  title: "Ei Erbij?",
   description: "Website voor de belangrijke taak van het bijhouden van eitjes",
 };
 
