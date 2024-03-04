@@ -27,7 +27,12 @@ export default async function Home() {
                 {date.toLocaleString(locale, { weekday: "long" })}
               </h1>
               <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
-              <p>er zijn nog {eggsLeft} eitjes over (<Link href="/kalibreer">kalibreer</Link>).</p>
+              <p>
+                {eggsLeft == 0 && <>er zijn geen eitjes meer over</>}
+                {eggsLeft == 1 && <>er is nog maar een eitje over</>}
+                {eggsLeft > 1 && <>er zijn nog {eggsLeft} eitjes over</>}
+                {" "}(<Link href="/kalibreer">kalibreer</Link>).
+              </p>
 
               {count > 0 ? (
                 <p>
