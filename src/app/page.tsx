@@ -1,7 +1,8 @@
-import { decreaseEggCount, eggCount, increaseEggCount } from "@/actions";
+import { decreaseEggCount, eggCount, getEggsLeft, increaseEggCount } from "@/actions";
 import { getUserId } from "@/utils";
 import Image from "next/image";
 import { SubmitButton } from "./_components/submit-button";
+import Link from "next/link";
 
 const locale = "nl-NL";
 
@@ -10,6 +11,7 @@ export default async function Home() {
   const cuid = getUserId();
   const date = new Date();
 
+  const eggsLeft = await getEggsLeft();
   const count = countMap
     ? Object.values(countMap).reduce((a, b) => a + b, 0)
     : 0;
@@ -25,6 +27,7 @@ export default async function Home() {
                 {date.toLocaleString(locale, { weekday: "long" })}
               </h1>
               <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
+              <p>er zijn nog {eggsLeft} eitjes over (<Link href="/kalibreer">kalibreer</Link>).</p>
 
               {count > 0 ? (
                 <p>
