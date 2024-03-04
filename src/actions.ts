@@ -32,7 +32,7 @@ export async function decreaseEggCount() {
 
 export async function setEggsLeft(fd: FormData) {
   const eggsLeft = parseInt(fd.get("count") as string);
-  if (isNaN(eggsLeft)) {
+  if (isNaN(eggsLeft) || eggsLeft < 0 || eggsLeft > 100) {
     throw new Error("Invalid egg count");
   }
   await kv.set("eggsLeft", eggsLeft);
