@@ -36,6 +36,9 @@ export async function setEggsLeft(fd: FormData) {
     throw new Error("Invalid egg count");
   }
   await kv.set("eggsLeft", eggsLeft);
+
+  revalidatePath("/");
+  revalidatePath("/calibreer");
 }
 
 export async function getEggsLeft() {
