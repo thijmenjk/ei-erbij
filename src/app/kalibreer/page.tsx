@@ -18,8 +18,8 @@ export default async function Page() {
             </h1>
             <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
             <p>
-              {eggsLeft == 0 && <>er zijn geen eitjes meer over</>}
-              {eggsLeft == 1 && <>er is nog maar een eitje over</>}
+              {eggsLeft <= 0 && <>er zijn geen eitjes meer over</>}
+              {eggsLeft == 1 && <>er is nog maar één eitje over</>}
               {eggsLeft > 1 && <>er zijn nog {eggsLeft} eitjes over</>}.
             </p>
 
