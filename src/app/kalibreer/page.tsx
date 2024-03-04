@@ -27,7 +27,7 @@ export default async function Page() {
                   min="0"
                   max="100"
                   defaultValue={eggsLeft} />
-                <SubmitButton>Opslaan</SubmitButton>
+                <SubmitButton>opslaan</SubmitButton>
               </form>
             </div>
           </div>

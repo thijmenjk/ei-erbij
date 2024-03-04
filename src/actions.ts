@@ -38,7 +38,7 @@ export async function setEggsLeft(fd: FormData) {
   await kv.set("eggsLeft", eggsLeft);
 
   revalidatePath("/");
-  revalidatePath("/calibreer");
+  revalidatePath("/kalibreer");
 }
 
 export async function getEggsLeft() {
