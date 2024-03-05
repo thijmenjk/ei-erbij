@@ -1,5 +1,6 @@
 import { getEggsLeft, setEggsLeft } from "@/actions";
 import { SubmitButton } from "../_components/submit-button";
+import Link from "next/link";
 
 const locale = "nl-NL";
 
@@ -18,9 +19,7 @@ export default async function Page() {
             </h1>
             <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
             <p>
-              {eggsLeft <= 0 && <>er zijn geen eitjes meer over</>}
-              {eggsLeft == 1 && <>er is nog maar één eitje over</>}
-              {eggsLeft > 1 && <>er zijn nog {eggsLeft} eitjes over</>}.
+              <Link href="/">terug</Link>
             </p>
 
             <div className="flex gap-2">

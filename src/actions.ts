@@ -3,6 +3,7 @@
 import { kv } from "@vercel/kv";
 import { revalidatePath } from "next/cache";
 import { date, createOrGetUserId, mapToStringNumberRecord } from "./utils";
+import { redirect } from "next/navigation";
 
 export async function eggCount() {
   return mapToStringNumberRecord(
@@ -39,8 +40,11 @@ export async function setEggsLeft(fd: FormData) {
 
   revalidatePath("/");
   revalidatePath("/kalibreer");
+
+  redirect("/");
 }
 
 export async function getEggsLeft() {
-  return await kv.get<number>("eggsLeft") ?? 0;
+  const result = await kv.get<number>("eggsLeft") ?? 0;
+  return result < 0 ? 0 : result;
 } 
