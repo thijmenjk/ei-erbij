@@ -31,7 +31,7 @@ export default async function Home() {
                 {eggsLeft <= 0 && <>er zijn geen eitjes meer over</>}
                 {eggsLeft == 1 && <>er is nog maar één eitje over</>}
                 {eggsLeft > 1 && <>er zijn nog {eggsLeft} eitjes over</>}
-                {" "}(<Link href="/kalibreer">kalibreer</Link>).
+                {" "}(<Link href="/kalibreer">kalibreer</Link>)
               </p>
 
               {count > 0 ? (
