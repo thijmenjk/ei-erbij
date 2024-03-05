@@ -22,10 +22,12 @@ export async function decreaseEggCount() {
   const userId = createOrGetUserId();
 
   // should use a transaction
-  if (await kv.hincrby(date(), userId, -1) < 0) {
-    await kv.hdel(date(), userId);
-  } else {
+  const result = await kv.hincrby(date(), userId, -1);
+  if (result >= 0) {
     await kv.incrby("eggsLeft", 1);
+  }
+  if (result <= 0) {
+    await kv.hdel(date(), userId);
   }
 
   revalidatePath("/");
