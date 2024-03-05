@@ -19,7 +19,7 @@ export default async function Page() {
             </h1>
             <h2 className="text-xl">{date.toLocaleDateString(locale)}</h2>
             <p>
-              <Link href="/">terug</Link>
+              <Link href="/" className="underline">terug</Link>
             </p>
 
             <div className="flex gap-2">
