@@ -22,8 +22,7 @@ export default async function RootLayout({
     <html lang="nl">
       <body className={inter.className}>
         {children}
-        
-        <script>window.apeeling = { representativeId: "clvf96czg00005b4a2wb6h338", mode: "bubble", baseUri: "https://universe.apeelingai.com", rootElementId: "apeeling-ai-client", }; (function () { d = document; s = d.createElement("script"); s.src = "https://starship.apeelingai.com"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+        <script dangerouslySetInnerHTML={{__html: `window.apeeling = { representativeId: "clvf96czg00005b4a2wb6h338", mode: "bubble", baseUri: "https://universe.apeelingai.com", rootElementId: "apeeling-ai-client", }; (function () { d = document; s = d.createElement("script"); s.src = "https://starship.apeelingai.com"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();`}}></script>
         <footer className="flex p-6 justify-center">
           <a
             href="https://github.com/thijmenjk/ei-erbij"
